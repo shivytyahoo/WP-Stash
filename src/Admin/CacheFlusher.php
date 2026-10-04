@@ -8,9 +8,6 @@ class CacheFlusher implements MenuItemProvider
 {
     public const PURGE_ACTION = 'purge_cache';
 
-    /**
-     * Filter name for the capability required to flush the object cache.
-     */
     public const FLUSH_CAPABILITY_FILTER = 'wp_stash_flush_cache_capability';
 
     public function item(): ?MenuItem
@@ -36,11 +33,6 @@ class CacheFlusher implements MenuItemProvider
         );
     }
 
-    /**
-     * Whether the current user is allowed to flush the object cache.
-     *
-     * @return bool
-     */
     public function userCanFlush(): bool
     {
         $default = is_multisite() ? 'manage_network_options' : 'manage_options';
